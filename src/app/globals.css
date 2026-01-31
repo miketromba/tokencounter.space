@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a12;
+  --foreground: #e8e8f0;
+  --card: #12121c;
+  --card-border: #1e1e2e;
+  --accent: #8b5cf6;
+  --accent-glow: rgba(139, 92, 246, 0.3);
+  --muted: #6b6b7b;
+  
+  /* Token colors - rainbow palette */
+  --token-1: #ef4444;
+  --token-2: #f97316;
+  --token-3: #eab308;
+  --token-4: #22c55e;
+  --token-5: #06b6d4;
+  --token-6: #3b82f6;
+  --token-7: #8b5cf6;
+  --token-8: #ec4899;
+  --token-9: #f43f5e;
+  --token-10: #14b8a6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Subtle star field background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at top, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.05) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Token visualization styles */
+.token {
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 1px;
+  border-radius: 4px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.token-1 { background: rgba(239, 68, 68, 0.25); color: #fca5a5; }
+.token-2 { background: rgba(249, 115, 22, 0.25); color: #fdba74; }
+.token-3 { background: rgba(234, 179, 8, 0.25); color: #fde047; }
+.token-4 { background: rgba(34, 197, 94, 0.25); color: #86efac; }
+.token-5 { background: rgba(6, 182, 212, 0.25); color: #67e8f9; }
+.token-6 { background: rgba(59, 130, 246, 0.25); color: #93c5fd; }
+.token-7 { background: rgba(139, 92, 246, 0.25); color: #c4b5fd; }
+.token-8 { background: rgba(236, 72, 153, 0.25); color: #f9a8d4; }
+.token-9 { background: rgba(244, 63, 94, 0.25); color: #fda4af; }
+.token-10 { background: rgba(20, 184, 166, 0.25); color: #5eead4; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Input focus styles */
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-glow), 0 0 20px var(--accent-glow);
+}
+
+/* Stat card hover effect */
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
 }
