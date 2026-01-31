@@ -110,7 +110,7 @@ export default function Home() {
 							alt="Token Counter"
 							width={28}
 							height={28}
-							className="rounded-md opacity-80 group-hover:opacity-100 transition-opacity"
+							className="rounded-md"
 						/>
 						<span className="text-base font-semibold tracking-tight">
 							<span className="text-foreground">
@@ -123,7 +123,7 @@ export default function Home() {
 						href="https://github.com/miketromba/tokencounter.space"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-1.5 px-2.5 py-1 bg-card/50 border border-card-border/70 rounded-md text-xs text-muted hover:text-foreground hover:border-accent/40 transition-all group"
+						className="flex items-center gap-1.5 px-2.5 py-1 bg-card/50 border border-card-border/70 rounded-md text-xs text-foreground hover:border-accent/40 transition-all group"
 					>
 						<svg
 							className="w-3.5 h-3.5"
@@ -138,7 +138,7 @@ export default function Home() {
 							/>
 						</svg>
 						<svg
-							className="w-3 h-3 text-yellow-400/80 group-hover:text-yellow-400 transition-colors"
+							className="w-3 h-3 text-yellow-400"
 							fill="currentColor"
 							viewBox="0 0 24 24"
 							aria-hidden="true"
