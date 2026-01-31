@@ -1,6 +1,6 @@
 # tokencounter.space
 
-A fast, minimal token counter for LLMs. Count tokens for GPT-4, Claude, and other AI models instantly.
+A fast, minimal token counter for LLMs. Count tokens for any large language model instantly.
 
 🔗 **Live:** [tokencounter.space](https://tokencounter.space)
 
@@ -9,7 +9,7 @@ A fast, minimal token counter for LLMs. Count tokens for GPT-4, Claude, and othe
 - **Instant token counting** — Real-time tokenization as you type
 - **Token visualization** — See how your text is split into tokens with color-coded display
 - **Multiple stats** — Tokens, words, characters, and characters without spaces
-- **GPT-4 compatible** — Uses `cl100k_base` encoding (same as GPT-4, GPT-3.5-turbo)
+- **Universal LLM compatibility** — Uses `cl100k_base` encoding, compatible with most modern LLMs
 - **Fast & lightweight** — Client-side tokenization, no API calls
 - **Mobile friendly** — Fully responsive design
 
